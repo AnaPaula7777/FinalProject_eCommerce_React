@@ -1,0 +1,25 @@
+#nav {
+	width: auto;
+	margin: 0 0 3em 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	background-color: rgb(90, 168, 207);
+}
+
+#nav li {
+		list-style-type:none;
+		padding: 8px 15px;
+		font-weight: bold;
+		color: azure;
+		border-right: 1px solid #ccc;
+}
+
+#nav #titulo {
+	float: left;
+	justify-content: left;
+	color: #f2f2f2;
+	text-align: center;
+	text-decoration: none;
+	font-size: 17px;
+}
