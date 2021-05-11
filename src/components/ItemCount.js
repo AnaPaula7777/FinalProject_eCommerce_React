@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import './ItemCount.css'
 
-export function ItemCount({ stock, initial, onAdd }) {
-  const [count, setCount] = useState(parseInt(initial));
+export function ItemCount({ stock, initial,  onAdd }) {
+    const [count,setCount] = useState(initial);
 
-  const addHandler = () => {
-    if(count < stock)
-    setCount(count + 1);
-  };
+    const increment = () => {
+        if (count >= stock){
+            return
+        }
+        setCount(count + 1);
+    }
+    const decrement = ()=>{
+        return setCount(count - 1);
+    }
 
-  const removeHandle = () => {
-    if(count > 0)
-    setCount(count - 1);
-  };
-
-  const agregar = () => {
-    onAdd(count)
-  }
+    const addHandler = ()=>{
+        onAdd(count)
+    }
 
   return (
     <div>
@@ -24,7 +24,7 @@ export function ItemCount({ stock, initial, onAdd }) {
         <button
           className="row"
           type="button"
-          onClick={removeHandle}
+          onClick={decrement}
         >
           -
         </button>
@@ -32,7 +32,7 @@ export function ItemCount({ stock, initial, onAdd }) {
         <button
           className="row"
           type="button"
-          onClick={addHandler}
+          onClick={increment}
         >
           +
         </button>
@@ -41,12 +41,10 @@ export function ItemCount({ stock, initial, onAdd }) {
         className="carrito"
         disabled={count <= 0}
         type="button"
-        onClick={agregar}
+        onClick={addHandler}
       >
         Agregar al carrito
       </button>
     </div>
-  );
+  )
 }
-
-export default ItemCount;

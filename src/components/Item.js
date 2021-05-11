@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import './Item.css'
-import ItemCount from './ItemCount'
 import clsx from 'clsx';
 import CardActions from '@material-ui/core/CardActions'
 import Collapse from '@material-ui/core/Collapse';
@@ -75,7 +74,6 @@ export const Item = ({ item }) => {
           </Typography>
         </CardContent>
       </Collapse>
-     <ItemCount stock={item.stock} initial='1' />
     </Card>
     </Link>
   );

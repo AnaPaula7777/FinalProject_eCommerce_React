@@ -36,8 +36,8 @@ export default function ItemListContainer() {
 
 
         return (
-            <div>
-              <span style={{position: 'relative', top: '-20px'}}>Items de la categoria {categoryId}</span>
+            <div id="list">
+              <span style={{position: 'relative', top: '20px'}}>Items de la categoria {categoryId}</span>
               {items.length > 0 ? <ItemList items={items} /> : <h2>Cargando...</h2>}
             </div>
         );

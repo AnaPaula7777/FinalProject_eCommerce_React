@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import './ItemDetail.css'
-import ItemCount from './ItemCount'
+import { ItemCount } from './ItemCount'
 import clsx from 'clsx';
 import CardActions from '@material-ui/core/CardActions'
 import Collapse from '@material-ui/core/Collapse';
@@ -43,21 +43,22 @@ const useStyles = makeStyles((theme) => ({
 export default function ItemDetail({ item }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-  const [count, setCount] = useState(0)
+  const [qty, setQty] = useState(0)
+
+  const {addItem} = useContext(CartContext)
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  const agregar = (num) => {
-    alert(`Se Agrego un Item. Cantidad: ${num}`)
-    setCount(num)
-}
-
-  const {addItem} = useContext(CartContext);
+  const onAdd = (quantityToAdd) => {
+    const qty = parseInt(quantityToAdd)
+    console.log('se agrego un item', qty)
+    setQty(qty)
+} 
 
   const terminarCompra = () =>{
-      addItem(item, count)
+      addItem(item, qty)
   }
  
     return <>
@@ -87,8 +88,8 @@ export default function ItemDetail({ item }) {
           </Typography>
         </CardContent>
       </Collapse> 
-      { count === 0 ?
-          <ItemCount stock={item.stock} initial='1' onAdd={agregar} />
+      { qty === 0 ?
+          <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
           :
           <div>
               <Link to="/cart">

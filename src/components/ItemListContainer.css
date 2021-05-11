@@ -1,6 +1,4 @@
 #list {
-    display: flex;
-    justify-content:space-around;
-    align-items: flex-start;
-    flex-direction: row;
+    text-align: center;
+    height: 100%;
 }

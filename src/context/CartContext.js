@@ -18,10 +18,6 @@ export const CartProvider = ({children}) => {
             return accumulador + ItemActual.quantity
         },0);
 
-        // for(let cartItem of cart) {
-        //     totItems += cartItem.quantity;
-        //     precio += cartItem.quantity * cartItem.item.price;
-        // }
 
         setTotalItems(totItems);
         setTotalPrecio(precio)

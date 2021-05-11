@@ -7,10 +7,12 @@ import { Grid } from '@material-ui/core/'
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
+        marginTop: 20,
         padding: theme.spacing(2),
     },
     grid: {
         display: 'flex',
+        marginTop: '20px',
         justifyContent: 'space-around',
         alignItems: 'flex-start',
         flexDirection: 'row'

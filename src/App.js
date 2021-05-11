@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import NavBar from './components/Navbar'
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import ItemListContainer from './components/ItemListContainer'
@@ -7,6 +6,7 @@ import { BrowserRouter, Switch, Route  } from 'react-router-dom'
 import { CartProvider } from "./context/CartContext";
 import { Cart } from "./components/Cart"
 import Home from "./components/Home"
+import './App.css'
 
 
 function App() {
